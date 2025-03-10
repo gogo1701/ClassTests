@@ -7,7 +7,6 @@ namespace ClassTests.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Application> Applications { get; set; }
-        public DbSet<Test> Tests { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

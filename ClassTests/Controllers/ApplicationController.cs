@@ -32,10 +32,9 @@ namespace ClassTests.Controllers
             if (application != null)
             {
                 viewModel.doesApplicationExist = true;
-                
 
                 return View(viewModel);
-            }   
+            }
             else
             {
                 viewModel.doesApplicationExist = false;

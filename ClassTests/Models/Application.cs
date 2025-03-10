@@ -15,6 +15,8 @@ namespace ClassTests.Models
 
         public ApplicationStatus Status { get; set; }
 
+
+        // Navigation
         public ApplicationUser User { get; set; }
 
     }
