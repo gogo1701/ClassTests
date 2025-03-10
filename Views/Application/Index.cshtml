@@ -1,0 +1,44 @@
+﻿@using ClassTests.Models.ViewModels
+@model ApplicationIndexViewModel
+@{
+    ViewData["Title"] = "Application Form";
+}
+
+@if (!Model.doesApplicationExist)
+{
+
+    <div class="alert alert-primary">
+        This form is important to use the website! After filling out your information, please DM in discord "@@georgi170109", "@@BorkoAXT" or "@@aleks_stoyanov" so we can look at your application. After applying we will redirect you to a page where you can see the status of your application!
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+        <div class="card shadow-lg p-4" style="width: 400px;">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">Application Form</h3>
+                <form asp-action="Index" method="post">
+                    <div class="mb-3">
+                        <label asp-for="Application.FirstNameApplication" class="form-label">First Name</label>
+                        <input asp-for="Application.FirstNameApplication" class="form-control" placeholder="Enter your first name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Application.LastNameApplication" class="form-label">Last Name</label>
+                        <input asp-for="Application.LastNameApplication" class="form-control" placeholder="Enter your last name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Application.DiscordNameApplication" class="form-label">Discord Username</label>
+                        <input asp-for="Application.DiscordNameApplication" class="form-control" placeholder="Enter your Discord username" required />
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-primary">
+        You already have applied! Please head to the status page to check your application.
+    </div>
+}

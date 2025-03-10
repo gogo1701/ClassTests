@@ -1,0 +1,40 @@
+﻿@using ClassTests.Models.ViewModels
+@model ApplicationIndexViewModel
+@{
+    ViewData["Title"] = "Application Form";
+}
+
+@if (Model.doesApplicationExist)
+{
+    <div class="alert alert-info">
+        If you haven't yet, please DM in discord "@@georgi170109", "@@BorkoAXT" or "@@aleks_stoyanov" so we can look at your application. You will receive access if accepted or you will be declined.
+    </div>
+    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+        <div class="card shadow-lg p-4" style="width: 400px;">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">Application Status</h3>
+                @if(Model.Application.Status == ClassTests.Models.Enums.ApplicationStatus.PENDING)
+                {
+                        <strong>Status:</strong> <span class="badge bg-warning">Pending</span>
+                }
+                else if (Model.Application.Status == ClassTests.Models.Enums.ApplicationStatus.ACCEPTED)
+                {
+                        <strong>Status:</strong> <span class="badge bg-success">Accepted</span>
+                }
+                else if (Model.Application.Status == ClassTests.Models.Enums.ApplicationStatus.DECLINED)
+                {
+                        <strong>Status:</strong> <span class="badge bg-danger">Declined</span>
+                }
+                <p><strong>First Name:</strong> @Model.Application.FirstNameApplication</p>
+                <p><strong>Last Name:</strong> @Model.Application.LastNameApplication</p>
+                <p><strong>Discord Name:</strong> @Model.Application.DiscordNameApplication</p>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        You haven't applied yet! Please head to the apply page then check your status.
+    </div>
+}

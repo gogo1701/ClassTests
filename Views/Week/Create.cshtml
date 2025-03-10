@@ -1,0 +1,26 @@
+﻿@model Test
+
+<div class="container mt-4">
+    <h3>Add New Task</h3>
+    <form method="post">
+        <div class="mb-3">
+            <label for="Title" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="Title" name="Title" required />
+        </div>
+        <div class="mb-3">
+            <label for="Description" class="form-label">Description</label>
+            <textarea class="form-control" id="Description" name="Description" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="DayOfWeek" class="form-label">Day of the Week</label>
+            <select class="form-control" id="DayOfWeek" name="DayOfWeek" required>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Add Task</button>
+    </form>
+</div>
